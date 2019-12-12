@@ -15,6 +15,9 @@ do
 
   tenpercent=$(expr $count '*' 20 '/' 100)
 
-  ls "$dir" | shuf -n "$tenpercent" | xargs -I {} mv "$dir"/{} "$base_folder$subdir"
+  #ls "$dir" | shuf -n "$tenpercent" | xargs -I {} mv "$dir"/{} "$base_folder$subdir"
 
 done
+
+echo "using remainder of original dataset as training ../caltech256/256_ObjectCategories/ --> ../caltech256/256_ObjectCategories/train"
+mv ../caltech256/256_ObjectCategories/ ../caltech256/256_ObjectCategories_train/
